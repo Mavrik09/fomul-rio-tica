@@ -161,31 +161,32 @@ function calcular() {
 
     let perfil="", desc="", cor="#ccc";
 
-if(total <= 5){ 
-    perfil = `O Cínico (O Mercenário) — 0 a 5 Pontos`;
-    desc = `Seu índice ético é preocupantemente baixo. Você vê a advocacia puramente como um negócio e uma batalha de interesses, não um serviço à justiça. Sua bússola é o lucro imediato e a vitória a qualquer custo. Você está sempre no limite da ilegalidade, priorizando a sobrevivência e o ganho pessoal acima de qualquer princípio moral ou regra profissional. Você acredita que "TODO MUNDO FAZ" e que ser ético é ser ingênuo. <br><br><h3>Provocação:</h3> Você é o tipo de advogado que destrói a reputação da classe. Você pode ter sucesso financeiro rápido, mas terá um preço: sua integridade é negociável, e você será temido, mas jamais respeitado. Seus clientes são ativos descartáveis, e seu risco de acabar enfrentando a OAB ou a Justiça é altíssimo.`;
-    cor = "#dc2626"; // vermelho
-} else if(total <= 10){
-    perfil = `O Pragmatista (O Jogador de Risco) — 6 a 10 Pontos`;
-    desc = `Você reconhece o valor da ética, mas a trata como uma ferramenta a ser usada apenas quando é conveniente ou legalmente exigida. Sua principal preocupação é evitar a punição (OAB ou Justiça), não agir corretamente. Você adota a ética seletiva: assume riscos morais em situações em que o benefício é alto e a chance de ser pego é baixa. Você evita a fraude óbvia, mas abraça a omissão e a manipulação sutil da verdade. <br><br><h3>Provocação:</h3> Você está sempre justificando seus "ATALHOS". Você vive na zona cinzenta, buscando o "JEITINHO" que te garante o resultado sem quebrar a lei abertamente. Seu problema não é a malícia, mas a falta de coragem para sacrificar um ganho. Você é um profissional competente, mas moralmente fraco, e a longo prazo, essa reputação limitada vai estagnar seu crescimento.`;
-    cor = "#f59e0b"; // laranja
-} else if(total <= 15){
-    perfil = `O Burocrata (O Seguidor de Regras) — 11 a 15 Pontos`;
-    desc = `Você é o defensor da legalidade estrita e do código de ética... desde que isso não exija sacrifícios pessoais. Você pontua bem nas questões que envolvem regras claras (fraude, suborno), mas hesita em dilemas morais complexos (denunciar um juiz, abandonar um cliente legalmente correto, mas moralmente repulsivo). Você adota uma ética reativa: evita o erro, mas não busca ativamente o acerto. Sua zona de conforto é o procedimento. <br><br><h3>Provocação:</h3> Você é um advogado seguro, mas previsível. Você nunca será a causa de um escândalo, mas também nunca fará a diferença em uma grande causa. Seu maior medo é o conflito e o risco de carreira. Sua ética é ditada pelo livro de regras, não pela sua consciência. Você faz o mínimo para ser considerado ético.`;
-    cor = "#facc15"; // amarelo
-} else if(total <= 20){
-    perfil = `O Ponderado (O Equilibrado Estratégico) — 16 a 20 Pontos`;
-    desc = `Você possui um forte senso de integridade e busca ativamente o equilíbrio entre a lealdade ao cliente e o dever para com a justiça e a sociedade. <br><br> Sua abordagem é a ética deliberativa: você analisa as consequências e tenta escolher a opção que cause o menor dano moral e profissional. Você está disposto a renunciar a um lucro fácil se a situação cheirar a ilícito, e defende a ética como um valor de longo prazo. <br><br><h3>Provocação</h3> Seu ponto fraco é o desconforto. Você tem a consciência limpa, mas gasta muita energia mental tentando justificar a escolha intermediária. Você precisa ter cuidado para que a busca pelo "equilíbrio" não se torne uma desculpa para não se posicionar de forma mais corajosa e combativa quando a causa for realmente justa.`;
-    cor = "#22c55e"; // verde claro
-} else if(total <= 25){
-    perfil = `O Idealista Inconformado (O Defensor de Princípios) — 21 a 25 Pontos`;
-    desc = `Sua pontuação revela uma alta rigidez moral e uma tendência a priorizar o ideal de justiça sobre o ganho pessoal e o conforto profissional. <br><br> Você aceita o sacrifício ético: está disposto a enfrentar a OAB, o juiz ou o próprio cliente para defender o que é correto. Você vê o sigilo e a lealdade com seriedade, mas reconhece que a ética pessoal e o dever para com o Direito (a verdade) são superiores. <br><br><h3>Provocação:</h3> Você é o tipo de advogado que as pessoas respeitam, mas que muitos colegas chamam de "ingênuo". Você pode perder batalhas financeiras no curto prazo, e a rigidez pode te isolar. Seu desafio é aprender a navegar no mundo real sem quebrar seus princípios, mas também sem se tornar um mártir desnecessário. O idealismo tem um preço alto.`;
-    cor = "#16a34a"; // verde médio
-} else {
-    perfil = `O Padrão Ouro (O Ícone da Integridade) — 26 a 30 Pontos`;
-    desc = `Seu índice ético é máximo ou quase máximo. Você demonstra um compromisso inabalável com a integridade, a justiça e os mais altos padrões da profissão. Você pratica a ética proativa, ou seja, você não apenas evita o erro, mas busca ativamente o acerto, mesmo quando ninguém está olhando e mesmo quando há um custo alto. Sua reputação é seu maior patrimônio. <br><br><h3>Provocação:</h3>Você é a exceção à regra, e isso te torna um alvo. As pessoas vão testar seus limites e tentar explorar sua integridade. Seu desafio não é ser ético, mas sim ser ético e eficaz, provando que a integridade é o caminho para o sucesso duradouro. Mantenha-se firme, pois sua consistência é a maior crítica aos perfis de 0 a 10 pontos.`;
-    cor = "#059669"; // verde escuro
-}
+
+            if (total <= 5) {
+                perfil = `O Cínico (O Mercenário) — 0 a 5 Pontos`;
+                desc = `Seu índice ético é preocupantemente baixo. Você vê a advocacia puramente como um negócio e uma batalha de interesses, não um serviço à justiça. Sua bússola é o lucro imediato e a vitória a qualquer custo. Você está sempre no limite da ilegalidade, priorizando a sobrevivência e o ganho pessoal acima de qualquer princípio moral ou regra profissional. Você acredita que "TODO MUNDO FAZ" e que ser ético é ser ingênuo. <br><br><h3>Provocação:</h3> Você é o tipo de advogado que destrói a reputação da classe. Você pode ter sucesso financeiro rápido, mas terá um preço: sua integridade é negociável, e você será temido, mas jamais respeitado. Seus clientes são ativos descartáveis, e seu risco de acabar enfrentando a OAB ou a Justiça é altíssimo.`;
+                cor = "#dc2626"; // vermelho
+            } else if (total <= 10) {
+                perfil = `O Pragmatista (O Jogador de Risco) — 6 a 10 Pontos`;
+                desc = `Você reconhece o valor da ética, mas a trata como uma ferramenta a ser usada apenas quando é conveniente ou legalmente exigida. Sua principal preocupação é evitar a punição (OAB ou Justiça), não agir corretamente. Você adota a ética seletiva: assume riscos morais em situações em que o benefício é alto e a chance de ser pego é baixa. Você evita a fraude óbvia, mas abraça a omissão e a manipulação sutil da verdade. <br><br><h3>Provocação:</h3> Você está sempre justificando seus "ATALHOS". Você vive na zona cinzenta, buscando o "JEITINHO" que te garante o resultado sem quebrar a lei abertamente. Seu problema não é a malícia, mas a falta de coragem para sacrificar um ganho. Você é um profissional competente, mas moralmente fraco, e a longo prazo, essa reputação limitada vai estagnar seu crescimento.`;
+                cor = "#f59e0b"; // laranja
+            } else if (total <= 15) {
+                perfil = `O Burocrata (O Seguidor de Regras) — 11 a 15 Pontos`;
+                desc = `Você é o defensor da legalidade estrita e do código de ética... desde que isso não exija sacrifícios pessoais. Você pontua bem nas questões que envolvem regras claras (fraude, suborno), mas hesita em dilemas morais complexos (denunciar um juiz, abandonar um cliente legalmente correto, mas moralmente repulsivo). <br><br><strong>Você adota uma ética reativa:</strong> evita o erro, mas não busca ativamente o acerto. Sua zona de conforto é o procedimento. <br><br><h3>Provocação:</h3> Você é um advogado seguro, mas previsível. Você nunca será a causa de um escândalo, mas também nunca fará a diferença em uma grande causa. Seu maior medo é o conflito e o risco de carreira. Sua ética é ditada pelo livro de regras, não pela sua consciência. Você faz o mínimo para ser considerado ético.`;
+                cor = "#facc15"; // amarelo
+            } else if (total <= 20) {
+                perfil = `O Ponderado (O Equilibrado Estratégico) — 16 a 20 Pontos`;
+                desc = `Você possui um forte senso de integridade e busca ativamente o equilíbrio entre a lealdade ao cliente e o dever para com a justiça e a sociedade. <br><br> <strong>Sua abordagem é a ética deliberativa:</strong> você analisa as consequências e tenta escolher a opção que cause o menor dano moral e profissional. Você está disposto a renunciar a um lucro fácil se a situação cheirar a ilícito, e defende a ética como um valor de longo prazo. <br><br><h3>Provocação</h3> Seu ponto fraco é o desconforto. Você tem a consciência limpa, mas gasta muita energia mental tentando justificar a escolha intermediária. Você precisa ter cuidado para que a busca pelo "equilíbrio" não se torne uma desculpa para não se posicionar de forma mais corajosa e combativa quando a causa for realmente justa.`;
+                cor = "#22c55e"; // verde claro
+            } else if (total <= 25) {
+                perfil = `O Idealista Inconformado (O Defensor de Princípios) — 21 a 25 Pontos`;
+                desc = `Sua pontuação revela uma alta rigidez moral e uma tendência a priorizar o ideal de justiça sobre o ganho pessoal e o conforto profissional. <br><br> <strong>Você aceita o sacrifício ético:</strong> Está disposto a enfrentar a OAB, o juiz ou o próprio cliente para defender o que é correto. Você vê o sigilo e a lealdade com seriedade, mas reconhece que a ética pessoal e o dever para com o Direito (a verdade) são superiores. <br><br><h3>Provocação:</h3> Você é o tipo de advogado que as pessoas respeitam, mas que muitos colegas chamam de "ingênuo". Você pode perder batalhas financeiras no curto prazo, e a rigidez pode te isolar. Seu desafio é aprender a navegar no mundo real sem quebrar seus princípios, mas também sem se tornar um mártir desnecessário. O idealismo tem um preço alto.`;
+                cor = "#16a34a"; // verde médio
+            } else {
+                perfil = `O Padrão Ouro (O Ícone da Integridade) — 26 a 30 Pontos`;
+                desc = `Seu índice ético é máximo ou quase máximo. Você demonstra um compromisso inabalável com a integridade, a justiça e os mais altos padrões da profissão. Você pratica a ética proativa, ou seja, você não apenas evita o erro, mas busca ativamente o acerto, mesmo quando ninguém está olhando e mesmo quando há um custo alto. Sua reputação é seu maior patrimônio. <br><br><h3>Provocação:</h3>Você é a exceção à regra, e isso te torna um alvo. As pessoas vão testar seus limites e tentar explorar sua integridade. Seu desafio não é ser ético, mas sim ser ético e eficaz, provando que a integridade é o caminho para o sucesso duradouro. Mantenha-se firme, pois sua consistência é a maior crítica aos perfis de 0 a 10 pontos.`;
+                cor = "#059669"; // verde escuro
+            }
 
     // Atualiza barra de progresso
     const barra = document.getElementById("barraProgressoInner");
@@ -214,6 +215,7 @@ if(total <= 5){
 
 </body>
 </html>
+
 
 
 
