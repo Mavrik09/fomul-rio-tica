@@ -3,262 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 Etica no Limite: E se você não fosse tão bonzinho quanto pensa?</title>
+<title>🔥 Ética no Limite</title>
 <style>
-    body {
-        font-family: 'Segoe UI', Roboto, sans-serif;
-        background: #f5f7fa;
-        color: #1f2937;
-        margin: 0;
-        padding: 0;
-    }
-    header {
-        background: linear-gradient(90deg, #111827, #1f2937);
-        color: #fff;
-        text-align: center;
-        padding: 30px 20px;
-    }
-    h1 {
-        font-size: 1.8em;
-        margin-bottom: 10px;
-    }
-    .container {
-        max-width: 900px;
-        margin: 40px auto;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        padding: 30px;
-    }
-    .question {
-        margin-bottom: 25px;
-        border-left: 4px solid #3b82f6;
-        padding-left: 15px;
-    }
-    .question h3 {
-        margin: 0 0 10px 0;
-        font-size: 1.1em;
-    }
-    label {
-        display: block;
-        margin: 5px 0;
-        padding: 8px 12px;
-        background: #f3f4f6;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-    label:hover {
-        background: #e5e7eb;
-    }
-    input[type="radio"] {
-        margin-right: 8px;
-    }
-    button {
-        background: #3b82f6;
-        color: #fff;
-        padding: 12px 25px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 1em;
-        transition: 0.2s;
-    }
-    button:hover {
-        background: #2563eb;
-    }
-    #resultado {
-        margin-top: 40px;
-        background: #f9fafb;
-        border-radius: 10px;
-        padding: 20px;
-        display: none;
-    }
-    .perfil {
-        font-weight: bold;
-        font-size: 1.2em;
-        margin-bottom: 10px;
-    }
-    .descricao {
-        line-height: 1.5;
-    }
+body { font-family:'Segoe UI', sans-serif; background:#f5f7fa; color:#1f2937; margin:0; padding:0; }
+header { background:#111827; color:#fff; text-align:center; padding:30px 20px; }
+h1 { margin:0; font-size:1.8em; }
+.container { max-width:900px; margin:40px auto; background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:30px; }
+.question { margin-bottom:25px; border-left:4px solid #3b82f6; padding-left:15px; }
+.question h3 { margin:0 0 10px 0; font-size:1.1em; }
+label { display:block; margin:5px 0; padding:8px 12px; background:#f3f4f6; border-radius:6px; cursor:pointer; transition:0.2s; }
+label:hover { background:#e5e7eb; }
+input[type="radio"] { margin-right:8px; }
+button { background:#3b82f6; color:#fff; padding:12px 25px; border:none; border-radius:8px; cursor:pointer; font-size:1em; transition:0.2s; }
+button:hover { background:#2563eb; }
+#resultado { margin-top:40px; background:#f9fafb; border-radius:10px; padding:20px; display:none; }
+.perfil { font-weight:bold; font-size:1.2em; margin-bottom:10px; }
+.descricao { line-height:1.5; }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>🔥 Etica no Limite: E se você não fosse tão bonzinho quanto pensa?</h1>
-    <p>Escolha a alternativa que mais se aproxima da sua ação real — não do que “parece bonito”.</p>
+<h1>🔥 Ética no Limite: E se você não fosse tão bonzinho quanto pensa?</h1>
+<p>Escolha a alternativa que melhor representa sua ação. Pontuação: 2 = Mais Ética, 1 = Ética Ponderada, 0 = Menos Ética.</p>
 </header>
 
 <div class="container">
 <form id="quizForm">
 
-    <!-- As 15 perguntas embaralhadas -->
-    <!-- Cada alternativa tem o valor correspondente (0, 1 ou 2) -->
-    
-    <div class="question">
-        <h3>1. O Segredo que Salva o Cliente</h3>
-        <label><input type="radio" name="q1" value="1">A) Uso o segredo para forçar um acordo, mas evito a mentira direta.</label>
-        <label><input type="radio" name="q1" value="0">B) Calo a boca. Minha lealdade é paga. A verdade é problema do juiz.</label>
-        <label><input type="radio" name="q1" value="2">C) Convenço o cliente a revelar a verdade e monto a defesa com base nela.</label>
-    </div>
+<!-- Perguntas completas exatas do seu questionário -->
 
-    <div class="question">
-        <h3>2. Defender um Monstro</h3>
-        <label><input type="radio" name="q2" value="0">A) Recuso. Não consigo fingir lealdade a alguém que considero um lixo.</label>
-        <label><input type="radio" name="q2" value="2">B) Defendo com unhas e dentes. Meu trabalho é a lei, não a moral.</label>
-        <label><input type="radio" name="q2" value="1">C) Defendo, mas faço o mínimo ético. Não vou suar por um culpado.</label>
-    </div>
+<div class="question">
+<h3>1. O Segredo que Salva o Cliente: Seu cliente confessa um fato grave (mas não ilegal) que, se usado, garante a vitória. Se você contar, ele perde. Sua lealdade é ao cliente ou à "verdade"?</h3>
+<label><input type="radio" name="q1" value="1">A) Uso o segredo para forçar um acordo, mas evito a mentira direta. (1 Ponto)</label>
+<label><input type="radio" name="q1" value="0">B) Calo a boca. Minha lealdade é paga. A verdade é problema do juiz. (0 Pontos)</label>
+<label><input type="radio" name="q1" value="2">C) Convenço o cliente a revelar a verdade e monto a defesa com base nela. (2 Pontos)</label>
+</div>
 
-    <div class="question">
-        <h3>3. O Silêncio que Causa Dano</h3>
-        <label><input type="radio" name="q3" value="2">A) Dou um jeito de alertar o alvo sem revelar a fonte.</label>
-        <label><input type="radio" name="q3" value="0">B) Assisto. O sigilo é sagrado.</label>
-        <label><input type="radio" name="q3" value="1">C) Me afasto da causa rápido.</label>
-    </div>
+<div class="question">
+<h3>2. Defender um Monstro: Você tem que defender um criminoso odiado que tem certeza de ser culpado. Você odeia o que ele fez, mas ele tem o direito. Você defende com raiva ou com tudo?</h3>
+<label><input type="radio" name="q2" value="0">A) Recuso. Não consigo fingir lealdade a alguém que considero um lixo. (0 Pontos)</label>
+<label><input type="radio" name="q2" value="2">B) Defendo com unhas e dentes. Meu trabalho é a lei, não a moral. (2 Pontos)</label>
+<label><input type="radio" name="q2" value="1">C) Defendo, mas faço o mínimo ético. Não vou suar por um culpado. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>4. O Colega Trapaceiro (Mas Lucrativo)</h3>
-        <label><input type="radio" name="q4" value="0">A) Olho para o outro lado. Dinheiro entra, e o mercado é assim.</label>
-        <label><input type="radio" name="q4" value="2">B) Denuncio na hora para a chefia.</label>
-        <label><input type="radio" name="q4" value="1">C) Dou um sermão no colega em particular.</label>
-    </div>
+<div class="question">
+<h3>3. O Silêncio que Causa Dano: Seu cliente diz que vai ferrar a vida financeira de alguém, mas não é um crime de morte. O sigilo te proíbe de falar. Você assiste de camarote ou quebra o sigilo?</h3>
+<label><input type="radio" name="q3" value="2">A) Dou um jeito de alertar o alvo sem revelar a fonte. A vida financeira pesa. (2 Pontos)</label>
+<label><input type="radio" name="q3" value="0">B) Assisto. O sigilo é sagrado. Quebrar é destruir a confiança da classe. (0 Pontos)</label>
+<label><input type="radio" name="q3" value="1">C) Me afasto da causa rápido. Deixo que outro se suje, mas eu não conto. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>5. Juiz Parcial: Risco de Carreira</h3>
-        <label><input type="radio" name="q5" value="2">A) Denuncio. A ética vale mais que meu nome.</label>
-        <label><input type="radio" name="q5" value="0">B) Não. O sistema é podre.</label>
-        <label><input type="radio" name="q5" value="1">C) Só denuncio se tiver prova irrefutável.</label>
-    </div>
+<div class="question">
+<h3>4. O Colega Trapaceiro (Mas Lucrativo): Seu colega mentiu levemente para um cliente, mas ganhou um contrato gigante para o escritório. Você protege o lucro ou denuncia a trapaça?</h3>
+<label><input type="radio" name="q4" value="0">A) Olho para o outro lado. Dinheiro entra, e o mercado é assim. (0 Pontos)</label>
+<label><input type="radio" name="q4" value="2">B) Denuncio na hora para a chefia. Nossos padrões não estão à venda. (2 Pontos)</label>
+<label><input type="radio" name="q4" value="1">C) Dou um sermão no colega em particular. Se repetir, eu falo. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>6. Ser "Certinho" Compensa?</h3>
-        <label><input type="radio" name="q6" value="2">A) É um dever, independente do preço.</label>
-        <label><input type="radio" name="q6" value="0">B) Não. Ética é para livros.</label>
-        <label><input type="radio" name="q6" value="1">C) Sim, a longo prazo.</label>
-    </div>
+<div class="question">
+<h3>5. Juiz Parcial: Risco de Carreira: Você vê o juiz favorecendo claramente seu oponente. Denunciar pode te colocar na lista negra do tribunal. Você arrisca a carreira pela justiça?</h3>
+<label><input type="radio" name="q5" value="2">A) Denuncio. A ética vale mais que meu nome. Que me queimem se for preciso. (2 Pontos)</label>
+<label><input type="radio" name="q5" value="0">B) Não. O sistema é podre. Vou lutar nos recursos e manter meu emprego. (0 Pontos)</label>
+<label><input type="radio" name="q5" value="1">C) Só denuncio se tiver prova irrefutável e um bom "plano de fuga" na carreira. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>7. Mentir para Ganhar</h3>
-        <label><input type="radio" name="q7" value="1">A) Tento uma solução legalmente defensável.</label>
-        <label><input type="radio" name="q7" value="2">B) Nunca. Meu papel é servir à justiça.</label>
-        <label><input type="radio" name="q7" value="0">C) Vou atrás da vitória. Sou pago para vencer.</label>
-    </div>
+<div class="question">
+<h3>6. Ser "Certinho" Compensa? Na prática, quem é 100% ético é passado para trás pelos espertos. A ética é um luxo que o advogado pode pagar?</h3>
+<label><input type="radio" name="q6" value="2">A) É um dever, independente do preço. O advogado não é um mercenário. (2 Pontos)</label>
+<label><input type="radio" name="q6" value="0">B) Não. Ética é para livros. Na vida real, você tem que ser esperto para sobreviver. (0 Pontos)</label>
+<label><input type="radio" name="q6" value="1">C) Sim, a longo prazo. Pode doer agora, mas atrai clientes melhores depois. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>8. Calar é Tão Ruim Quanto Falar?</h3>
-        <label><input type="radio" name="q8" value="2">A) Sim. Omissão estratégica é desonestidade pura.</label>
-        <label><input type="radio" name="q8" value="0">B) Não. Meu dever é proteger meu cliente.</label>
-        <label><input type="radio" name="q8" value="1">C) Só é suja se houver má-fé clara.</label>
-    </div>
+<div class="question">
+<h3>7. Mentir para Ganhar: Seu cliente tem uma chance de vitória se você "embelezar" um pouco os fatos. Ele te pressiona. Você vai atrás da vitória ou da verdade?</h3>
+<label><input type="radio" name="q7" value="1">A) Tento uma solução legalmente defensável, mas evito a mentira flagrante. (1 Ponto)</label>
+<label><input type="radio" name="q7" value="2">B) Nunca. Meu papel é servir à justiça. Se o cliente quer mentir, que arrume outro. (2 Pontos)</label>
+<label><input type="radio" name="q7" value="0">C) Vou atrás da vitória. Sou pago para vencer o processo. (0 Pontos)</label>
+</div>
 
-    <div class="question">
-        <h3>9. A Regra ou a Consciência?</h3>
-        <label><input type="radio" name="q9" value="1">A) Traio a moral. O Código é a lei.</label>
-        <label><input type="radio" name="q9" value="2">B) Tento achar uma brecha; se não der, sigo a moral.</label>
-        <label><input type="radio" name="q9" value="0">C) Traio a regra. A ética começa no indivíduo.</label>
-    </div>
+<div class="question">
+<h3>8. Calar é Tão Ruim Quanto Falar? Você tem uma informação que, se dita, faz o seu cliente perder, mas garante justiça ao outro lado. Você se cala. Essa omissão é tão suja quanto uma mentira?</h3>
+<label><input type="radio" name="q8" value="2">A) Sim. Omissão estratégica para esconder a verdade é desonestidade pura. (2 Pontos)</label>
+<label><input type="radio" name="q8" value="0">B) Não. Meu dever é proteger meu cliente, não o adversário. (0 Pontos)</label>
+<label><input type="radio" name="q8" value="1">C) Só é suja se a omissão for claramente com má-fé para causar um dano brutal. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>10. Dinheiro Rápido e Sujo</h3>
-        <label><input type="radio" name="q10" value="2">A) Recuso e me afasto.</label>
-        <label><input type="radio" name="q10" value="0">B) Aceito e chamo de "bônus por exclusividade".</label>
-        <label><input type="radio" name="q10" value="1">C) Recuso e dou um sermão ético.</label>
-    </div>
+<div class="question">
+<h3>9. A Regra ou a Consciência? O Código de Ética te obriga a fazer algo que, no seu íntimo, parece injusto. Você trai a regra ou trai seu valor moral?</h3>
+<label><input type="radio" name="q9" value="1">A) Traio a moral. O Código é a lei, e eu preciso seguir as regras da minha profissão. (1 Ponto)</label>
+<label><input type="radio" name="q9" value="2">B) Tento achar uma brecha na regra. Se não der, a moral deve falar mais alto. (2 Pontos)</label>
+<label><input type="radio" name="q9" value="0">C) Traio a regra. A ética começa no indivíduo, não no papel. (0 Pontos)</label>
+</div>
 
-    <div class="question">
-        <h3>11. Fraude Discreta de Colega</h3>
-        <label><input type="radio" name="q11" value="1">A) Recuso e digo que ele está sozinho nessa.</label>
-        <label><input type="radio" name="q11" value="2">B) Recuso e denuncio à chefia.</label>
-        <label><input type="radio" name="q11" value="0">C) Ajudo. Colega se ajuda.</label>
-    </div>
+<div class="question">
+<h3>10. Dinheiro Rápido e Sujo: Um cliente bilionário te oferece uma bolada por fora para "dar uma atenção especial" ao processo. Isso não é legal, mas acelera tudo. Você aceita o dinheiro?</h3>
+<label><input type="radio" name="q10" value="2">A) Recuso e me afasto. Quem oferece suborno, mesmo velado, não merece minha defesa. (2 Pontos)</label>
+<label><input type="radio" name="q10" value="0">B) Aceito e chamo de "bônus por exclusividade". Se ninguém souber, não é ilegal. (0 Pontos)</label>
+<label><input type="radio" name="q10" value="1">C) Recuso e dou um sermão ético. Honorário é fixo e transparente. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>12. Ética no Trabalho vs. Ética na Vida</h3>
-        <label><input type="radio" name="q12" value="2">A) Não. Quem é íntegro não desliga a consciência.</label>
-        <label><input type="radio" name="q12" value="0">B) Parcialmente. Tento ser profissional.</label>
-        <label><input type="radio" name="q12" value="1">C) Sim. No escritório sou técnico.</label>
-    </div>
+<div class="question">
+<h3>11. Fraude Discreta de Colega: Um amigo do escritório te pede para "ajeitar" uma data em um documento para salvar um processo. É quase uma falsificação. Você ajuda o amigo?</h3>
+<label><input type="radio" name="q11" value="1">A) Recuso e digo que ele está sozinho nessa. Não quero ser cúmplice. (1 Ponto)</label>
+<label><input type="radio" name="q11" value="2">B) Recuso e denuncio à chefia. Não posso deixar o escritório ser envolvido nisso. (2 Pontos)</label>
+<label><input type="radio" name="q11" value="0">C) Ajudo. Colega se ajuda. É só um detalhe técnico, não vai matar ninguém. (0 Pontos)</label>
+</div>
 
-    <div class="question">
-        <h3>13. Ajudar um Mal-Intencionado</h3>
-        <label><input type="radio" name="q13" value="2">A) Peço afastamento imediato.</label>
-        <label><input type="radio" name="q13" value="0">B) Sim. É legal, e meu cliente é a prioridade.</label>
-        <label><input type="radio" name="q13" value="1">C) Continuo, mas com um pé atrás.</label>
-    </div>
+<div class="question">
+<h3>12. Ética no Trabalho vs. Ética na Vida: Você tem valores pessoais rígidos, mas o trabalho exige que você lide com clientes "moralmente cinzentos". Você consegue desligar seus valores na porta do escritório?</h3>
+<label><input type="radio" name="q12" value="2">A) Não. Quem é íntegro não tem um "botão de desligar" a consciência. (2 Pontos)</label>
+<label><input type="radio" name="q12" value="0">B) Parcialmente. Valores pessoais sempre vazam, mas tento ser profissional. (0 Pontos)</label>
+<label><input type="radio" name="q12" value="1">C) Sim. No escritório, sou um profissional técnico. A vida pessoal fica em casa. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>14. A Escolha de Satanás (Lucro vs. Causa)</h3>
-        <label><input type="radio" name="q14" value="2">A) O compromisso com o fraco. O dinheiro virá depois.</label>
-        <label><input type="radio" name="q14" value="0">B) O lucro. O escritório tem que pagar as contas.</label>
-        <label><input type="radio" name="q14" value="1">C) Tento negociar para não largar totalmente o pro bono.</label>
-    </div>
+<div class="question">
+<h3>13. Ajudar um Mal-Intencionado: Você descobre que seu cliente está usando suas estratégias legais para ferrar um concorrente de forma cruel, mas dentro da lei. Você continua defendendo ele?</h3>
+<label><input type="radio" name="q13" value="2">A) Peço o afastamento imediato. Não serei arma para a maldade dos outros. (2 Pontos)</label>
+<label><input type="radio" name="q13" value="0">B) Sim. É legal, e meu cliente é a prioridade. Não sou babá moral de ninguém. (0 Pontos)</label>
+<label><input type="radio" name="q13" value="1">C) Continuo, mas com um pé atrás, e evito dar ideias novas. (1 Ponto)</label>
+</div>
 
-    <div class="question">
-        <h3>15. O Teste do Caráter</h3>
-        <label><input type="radio" name="q15" value="2">A) Corrijo o erro. Minha ética não depende de testemunhas.</label>
-        <label><input type="radio" name="q15" value="0">B) Me aproveito. A falha é do outro lado.</label>
-        <label><input type="radio" name="q15" value="1">C) Se o erro for pequeno, deixo passar.</label>
-    </div>
+<div class="question">
+<h3>14. A Escolha de Satanás (Lucro vs. Causa): Você pode pegar um contrato milionário, mas isso vai te obrigar a abandonar o caso pro bono (gratuito) de um grupo pobre que precisa de você. O que você prioriza?</h3>
+<label><input type="radio" name="q14" value="2">A) O compromisso com o fraco. O dinheiro virá depois, e minha palavra vale. (2 Pontos)</label>
+<label><input type="radio" name="q14" value="0">B) O lucro. O escritório tem que pagar as contas. Caridade é para as sobras. (0 Pontos)</label>
+<label><input type="radio" name="q14" value="1">C) Tento negociar o grande contrato para não largar totalmente o caso pro bono. (1 Ponto)</label>
+</div>
 
-    <button type="button" onclick="calcularPontuacao()">Calcular Índice Ético</button>
+<div class="question">
+<h3>15. O Teste do Caráter: Ninguém está olhando. Você vê um erro no processo que te dá uma vitória fácil. O juiz errou. Você aponta o erro ou se aproveita do lapso?</h3>
+<label><input type="radio" name="q15" value="2">A) Corrijo o erro. Minha ética não depende de testemunhas. (2 Pontos)</label>
+<label><input type="radio" name="q15" value="0">B) Me aproveito. A falha é do outro lado. Meu trabalho é vencer. (0 Pontos)</label>
+<label><input type="radio" name="q15" value="1">C) Se o erro for pequeno, deixo passar. Se for um absurdo, corrijo. (1 Ponto)</label>
+</div>
+
+<button type="button" onclick="calcular()">Calcular Índice Ético</button>
 </form>
 
 <div id="resultado">
-    <div class="perfil"></div>
-    <div class="descricao"></div>
+<div class="perfil"></div>
+<div class="descricao"></div>
 </div>
 
 </div>
 
 <script>
-function calcularPontuacao() {
+function calcular() {
     let total = 0;
-    for (let i = 1; i <= 15; i++) {
-        const resposta = document.querySelector(`input[name="q${i}"]:checked`);
-        if (resposta) total += parseInt(resposta.value);
+    for(let i=1;i<=15;i++){
+        const r = document.querySelector(`input[name="q${i}"]:checked`);
+        if(!r){ alert("⚠️ Responda todas as perguntas!"); return; }
+        total += parseInt(r.value);
     }
 
-    if (document.querySelectorAll('input[type="radio"]:checked').length < 15) {
-        alert("⚠️ Responda todas as perguntas antes de calcular seu Índice Ético!");
-        return;
-    }
-
-    const perfilEl = document.querySelector(".perfil");
-    const descEl = document.querySelector(".descricao");
-    const resultadoEl = document.getElementById("resultado");
-
-    let perfil = "";
-    let descricao = "";
-
-    if (total <= 5) {
-        perfil = "Perfil 1: O Pragmatista Conveniente (0–5)";
-        descricao = "Você vê a ética como obstáculo, não como princípio. Tende a justificar meios antiéticos com resultados práticos.";
-    } else if (total <= 10) {
-        perfil = "Perfil 2: O Neutro Conformista (6–10)";
-        descricao = "Evita conflitos morais e segue o fluxo. Cumpre regras sem refletir sobre o impacto ético real.";
-    } else if (total <= 15) {
-        perfil = "Perfil 3: O Ético Situacional (11–15)";
-        descricao = "Reconhece a ética, mas a aplica conforme a conveniência. É vulnerável à pressão externa.";
-    } else if (total <= 20) {
-        perfil = "Perfil 4: O Responsável Consciente (16–20)";
-        descricao = "Tenta equilibrar moral e dever, mesmo em dilemas difíceis. Busca agir com integridade consistente.";
-    } else if (total <= 25) {
-        perfil = "Perfil 5: O Ético Convicto (21–25)";
-        descricao = "Mantém princípios sólidos, mesmo com prejuízos. Inspira respeito e confiança.";
+    let perfil="", desc="";
+    if(total<=5){ 
+        perfil="Perfil 1: O Pragmatista Conveniente (0–5)";
+        desc="Você vê a ética como obstáculo, não como princípio. Tende a justificar meios antiéticos com resultados práticos.";
+    } else if(total<=10){
+        perfil="Perfil 2: O Neutro Conformista (6–10)";
+        desc="Evita conflitos morais e segue o fluxo. Cumpre regras sem refletir sobre o impacto ético real.";
+    } else if(total<=15){
+        perfil="Perfil 3: O Ético Situacional (11–15)";
+        desc="Reconhece a ética, mas a aplica conforme a conveniência. É vulnerável à pressão externa.";
+    } else if(total<=20){
+        perfil="Perfil 4: O Responsável Consciente (16–20)";
+        desc="Tenta equilibrar moral e dever, mesmo em dilemas difíceis. Busca agir com integridade consistente.";
+    } else if(total<=25){
+        perfil="Perfil 5: O Ético Convicto (21–25)";
+        desc="Mantém princípios sólidos, mesmo com prejuízos. Inspira respeito e confiança.";
     } else {
-        perfil = "Perfil 6: O Guardião da Justiça (26–30)";
-        descricao = "Enxerga a ética como base inegociável da profissão. Une técnica e moral com firmeza exemplar.";
+        perfil="Perfil 6: O Guardião da Justiça (26–30)";
+        desc="Enxerga a ética como base inegociável da profissão. Une técnica e moral com firmeza exemplar.";
     }
 
-    perfilEl.textContent = `Seu Índice Ético: ${total}/30 → ${perfil}`;
-    descEl.textContent = descricao;
-    resultadoEl.style.display = "block";
-    resultadoEl.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(".perfil").textContent = `Seu Índice Ético: ${total}/30 → ${perfil}`;
+    document.querySelector(".descricao").textContent = desc;
+    document.getElementById("resultado").style.display="block";
+    document.getElementById("resultado").scrollIntoView({behavior:"smooth"});
 }
 </script>
 
 </body>
 </html>
-
