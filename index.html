@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste de Ética Profissional Jurídica</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    text-align: center;
+    color: #1d4ed8;
+  }
+  .question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  button {
+    display: block;
+    margin: 20px auto;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover { background: #1e40af; }
+  #resultado {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .baixo { background: #fee2e2; color: #991b1b; }
+  .medio { background: #fef9c3; color: #92400e; }
+  .alto { background: #dcfce7; color: #166534; }
+</style>
+</head>
+<body>
+
+<h1>Teste de Ética Profissional Jurídica</h1>
+<p>Responda sinceramente às 15 perguntas abaixo. Ao final, veja seu índice ético e interpretação do perfil.</p>
+
+<form id="quizForm">
+  <!-- As perguntas -->
+</form>
+
+<button type="button" onclick="calcular()">Calcular Resultado</button>
+<div id="resultado"></div>
+
+<script>
+const perguntas = [
+"Quando a verdade e o interesse do cliente entram em conflito, qual princípio deve prevalecer?",
+"Você aceitaria defender uma causa em que acredita que seu cliente é culpado, mas tem direito à defesa?",
+"Até que ponto o sigilo profissional deve ser preservado?",
+"O que faria se um colega mentisse para o cliente, mas trouxesse bons resultados ao escritório?",
+"Se um juiz favorece claramente uma parte, você denunciaria mesmo que prejudicasse sua carreira?",
+"Ser ético no Direito é possível sem sofrer prejuízos profissionais?",
+"A busca pela vitória do cliente pode ser mais importante que a busca pela verdade?",
+"Em que situações a omissão é tão antiética quanto a mentira?",
+"O que é mais grave: violar uma norma jurídica ou trair um valor moral?",
+"Um cliente rico oferece uma gratificação para 'acelerar' o processo. O que você faz?",
+"Um colega pede ajuda para 'corrigir' um documento que altera o conteúdo original.",
+"É possível separar vida pessoal e profissional ao tomar decisões éticas?",
+"Até que ponto um advogado deve ser leal ao cliente quando percebe fins escusos?",
+"Quando a ética entra em choque com o lucro, qual caminho você escolheria?",
+"O que significa 'agir com ética' quando ninguém está observando?"
+];
+
+const alternativas = [
+["A) Sempre o interesse do cliente","B) Depende da situação","C) A verdade deve prevalecer"],
+["A) Sim, é dever profissional","B) Aceitaria com desconforto","C) Não aceitaria"],
+["A) Sempre","B) Até o ponto em que não cause danos","C) A justiça deve prevalecer"],
+["A) Ignoraria","B) Conversaria com o colega","C) Denunciaria"],
+["A) Não denunciaria","B) Denunciaria com provas","C) Sim, denunciaria"],
+["A) Não, quem é ético sai prejudicado","B) Sim, com coragem","C) Sim, a ética gera respeito"],
+["A) Sim, vencer é o foco","B) Às vezes","C) Nunca"],
+["A) Quando prejudica alguém","B) Quando há injustiça","C) Sempre"],
+["A) Norma jurídica","B) Depende","C) Valor moral"],
+["A) Aceitaria","B) Recusaria","C) Recusaria e denunciaria"],
+["A) Ajudaria","B) Recusaria","C) Denunciaria"],
+["A) Sim, totalmente","B) Parcialmente","C) Não"],
+["A) Totalmente leal","B) Até o limite da legalidade","C) Afastar-se da causa"],
+["A) Lucro","B) Equilíbrio","C) Ética"],
+["A) O que me beneficia","B) Evitar excessos","C) Manter princípios"]
+];
+
+const form = document.getElementById("quizForm");
+perguntas.forEach((p, i) => {
+  const div = document.createElement("div");
+  div.classList.add("question");
+  div.innerHTML = `<p><b>${i+1}. ${p}</b></p>`;
+  alternativas[i].forEach((alt, j) => {
+    div.innerHTML += `<label><input type="radio" name="q${i}" value="${j}"> ${alt}</label><br>`;
+  });
+  form.appendChild(div);
+});
+
+function calcular() {
+  let score = 0;
+  for (let i=0;i<perguntas.length;i++){
+    const escolha = document.querySelector(`input[name='q${i}']:checked`);
+    if (!escolha) return alert("Responda todas as perguntas antes de enviar!");
+    score += parseInt(escolha.value);
+  }
+
+  const total = score;
+  let nivel = "";
+  let classe = "";
+  if (total <= 10){ nivel = "ÉTICA VULNERÁVEL – tende à conveniência pessoal."; classe = "baixo"; }
+  else if (total <= 20){ nivel = "ÉTICA CONDICIONAL – consciente, mas depende das circunstâncias."; classe = "medio"; }
+  else { nivel = "ÉTICA CONVICTA – age por princípios, mesmo sob risco."; classe = "alto"; }
+
+  document.getElementById("resultado").className = classe;
+  document.getElementById("resultado").innerHTML =
+    `<h2>Resultado: ${total} pontos</h2><p>${nivel}</p>`;
+}
+</script>
+
+</body>
+</html>
