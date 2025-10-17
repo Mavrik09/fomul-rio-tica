@@ -3,132 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teste de Ética Profissional Jurídica</title>
+<title>🔥 Ética no Limite: O Jogo Sujo da Advocacia</title>
 <style>
-  body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f8fafc;
-    color: #1e293b;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    line-height: 1.6;
-  }
-  h1 {
-    text-align: center;
-    color: #1d4ed8;
-  }
-  .question {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  }
-  button {
-    display: block;
-    margin: 20px auto;
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  button:hover { background: #1e40af; }
-  #resultado {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 25px;
-    padding: 15px;
-    border-radius: 10px;
-  }
-  .baixo { background: #fee2e2; color: #991b1b; }
-  .medio { background: #fef9c3; color: #92400e; }
-  .alto { background: #dcfce7; color: #166534; }
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f9fafb;
+        color: #1f2937;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    h1 {
+        text-align: center;
+        color: #1e3a8a;
+    }
+    .question {
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .options label {
+        display: block;
+        margin: 8px 0;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid #d1d5db;
+    }
+    .options label:hover {
+        background: #e0e7ff;
+    }
+    button {
+        display: block;
+        margin: 20px auto;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 24px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background: #1d4ed8;
+    }
+    #result {
+        background: #f3f4f6;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 24px;
+    }
+    .profile-title {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #111827;
+    }
 </style>
 </head>
 <body>
-
-<h1>Teste de Ética Profissional Jurídica</h1>
-<p>Responda sinceramente às 15 perguntas abaixo. Ao final, veja seu índice ético e interpretação do perfil.</p>
+<h1>🔥 Ética no Limite: O Jogo Sujo da Advocacia</h1>
+<p><b>Instrução:</b> Escolha a alternativa que mais se aproxima da sua atitude real. Cada resposta vale de 0 a 2 pontos. No fim, descubra seu <b>Índice Ético</b> e seu perfil.</p>
 
 <form id="quizForm">
-  <!-- As perguntas -->
+    <!-- As perguntas -->
 </form>
 
-<button type="button" onclick="calcular()">Calcular Resultado</button>
-<div id="resultado"></div>
+<button type="button" onclick="calcularPontuacao()">Calcular Índice Ético</button>
+
+<div id="result"></div>
 
 <script>
 const perguntas = [
-"Quando a verdade e o interesse do cliente entram em conflito, qual princípio deve prevalecer?",
-"Você aceitaria defender uma causa em que acredita que seu cliente é culpado, mas tem direito à defesa?",
-"Até que ponto o sigilo profissional deve ser preservado?",
-"O que faria se um colega mentisse para o cliente, mas trouxesse bons resultados ao escritório?",
-"Se um juiz favorece claramente uma parte, você denunciaria mesmo que prejudicasse sua carreira?",
-"Ser ético no Direito é possível sem sofrer prejuízos profissionais?",
-"A busca pela vitória do cliente pode ser mais importante que a busca pela verdade?",
-"Em que situações a omissão é tão antiética quanto a mentira?",
-"O que é mais grave: violar uma norma jurídica ou trair um valor moral?",
-"Um cliente rico oferece uma gratificação para 'acelerar' o processo. O que você faz?",
-"Um colega pede ajuda para 'corrigir' um documento que altera o conteúdo original.",
-"É possível separar vida pessoal e profissional ao tomar decisões éticas?",
-"Até que ponto um advogado deve ser leal ao cliente quando percebe fins escusos?",
-"Quando a ética entra em choque com o lucro, qual caminho você escolheria?",
-"O que significa 'agir com ética' quando ninguém está observando?"
+{
+pergunta: "1. O Segredo que Salva o Cliente: Seu cliente confessa um fato grave (mas não ilegal)...",
+opcoes: [
+{ texto: "A) Uso o segredo para forçar um acordo, mas evito a mentira direta.", valor: 1 },
+{ texto: "B) Calo a boca. Minha lealdade é paga. A verdade é problema do juiz.", valor: 0 },
+{ texto: "C) Convenço o cliente a revelar a verdade e monto a defesa com base nela.", valor: 2 }
+]
+},
+{
+pergunta: "2. Defender um Monstro: Você tem que defender um criminoso odiado...",
+opcoes: [
+{ texto: "A) Recuso. Não consigo fingir lealdade a alguém que considero um lixo.", valor: 0 },
+{ texto: "B) Defendo com unhas e dentes. Meu trabalho é a lei, não a moral.", valor: 2 },
+{ texto: "C) Defendo, mas faço o mínimo ético. Não vou suar por um culpado.", valor: 1 }
+]
+},
+{
+pergunta: "3. O Silêncio que Causa Dano: Seu cliente diz que vai ferrar a vida financeira de alguém...",
+opcoes: [
+{ texto: "A) Dou um jeito de alertar o alvo sem revelar a fonte.", valor: 2 },
+{ texto: "B) Assisto. O sigilo é sagrado.", valor: 0 },
+{ texto: "C) Me afasto da causa rápido.", valor: 1 }
+]
+},
+{
+pergunta: "4. O Colega Trapaceiro (Mas Lucrativo): Seu colega mentiu levemente para um cliente...",
+opcoes: [
+{ texto: "A) Olho para o outro lado. Dinheiro entra, e o mercado é assim.", valor: 0 },
+{ texto: "B) Denuncio na hora para a chefia.", valor: 2 },
+{ texto: "C) Dou um sermão no colega em particular.", valor: 1 }
+]
+},
+{
+pergunta: "5. Juiz Parcial: Risco de Carreira...",
+opcoes: [
+{ texto: "A) Denuncio. A ética vale mais que meu nome.", valor: 2 },
+{ texto: "B) Não. O sistema é podre.", valor: 0 },
+{ texto: "C) Só denuncio se tiver prova irrefutável e plano de fuga.", valor: 1 }
+]
+},
+{
+pergunta: "6. Ser 'Certinho' Compensa? Na prática, quem é 100% ético é passado para trás...",
+opcoes: [
+{ texto: "A) É um dever, independente do preço.", valor: 2 },
+{ texto: "B) Não. Ética é para livros.", valor: 0 },
+{ texto: "C) Sim, a longo prazo compensa.", valor: 1 }
+]
+},
+{
+pergunta: "7. Mentir para Ganhar: Seu cliente te pressiona...",
+opcoes: [
+{ texto: "A) Tento uma solução legal, mas evito mentira flagrante.", valor: 1 },
+{ texto: "B) Nunca. Meu papel é servir à justiça.", valor: 2 },
+{ texto: "C) Vou atrás da vitória. Sou pago para vencer.", valor: 0 }
+]
+},
+{
+pergunta: "8. Calar é Tão Ruim Quanto Falar? Você tem uma informação...",
+opcoes: [
+{ texto: "A) Sim. Omissão estratégica é desonestidade pura.", valor: 2 },
+{ texto: "B) Não. Meu dever é proteger meu cliente.", valor: 0 },
+{ texto: "C) Só é suja se causar dano brutal.", valor: 1 }
+]
+},
+{
+pergunta: "9. A Regra ou a Consciência? O Código de Ética te obriga a algo injusto...",
+opcoes: [
+{ texto: "A) Traio a moral. O Código é a lei.", valor: 1 },
+{ texto: "B) Tento achar uma brecha. A moral deve falar mais alto.", valor: 2 },
+{ texto: "C) Traio a regra. Ética começa no indivíduo.", valor: 0 }
+]
+},
+{
+pergunta: "10. Dinheiro Rápido e Sujo...",
+opcoes: [
+{ texto: "A) Recuso e me afasto.", valor: 2 },
+{ texto: "B) Aceito e chamo de bônus.", valor: 0 },
+{ texto: "C) Recuso e dou um sermão ético.", valor: 1 }
+]
+},
+{
+pergunta: "11. Fraude Discreta de Colega...",
+opcoes: [
+{ texto: "A) Recuso e digo que ele está sozinho.", valor: 1 },
+{ texto: "B) Recuso e denuncio à chefia.", valor: 2 },
+{ texto: "C) Ajudo. Colega se ajuda.", valor: 0 }
+]
+},
+{
+pergunta: "12. Ética no Trabalho vs. Ética na Vida...",
+opcoes: [
+{ texto: "A) Não. Quem é íntegro não tem botão de desligar.", valor: 2 },
+{ texto: "B) Parcialmente. Tento ser profissional.", valor: 0 },
+{ texto: "C) Sim. No escritório, sou técnico.", valor: 1 }
+]
+},
+{
+pergunta: "13. Ajudar um Mal-Intencionado...",
+opcoes: [
+{ texto: "A) Peço afastamento imediato.", valor: 2 },
+{ texto: "B) Sim. É legal, cliente é prioridade.", valor: 0 },
+{ texto: "C) Continuo, mas evito dar ideias.", valor: 1 }
+]
+},
+{
+pergunta: "14. A Escolha de Satanás (Lucro vs. Causa)...",
+opcoes: [
+{ texto: "A) O compromisso com o fraco.", valor: 2 },
+{ texto: "B) O lucro. Escritório precisa pagar contas.", valor: 0 },
+{ texto: "C) Tento negociar o contrato.", valor: 1 }
+]
+},
+{
+pergunta: "15. O Teste do Caráter...",
+opcoes: [
+{ texto: "A) Corrijo o erro. Ética não depende de testemunhas.", valor: 2 },
+{ texto: "B) Me aproveito. A falha é do outro.", valor: 0 },
+{ texto: "C) Se o erro for pequeno, deixo passar.", valor: 1 }
+]
+}
 ];
 
-const alternativas = [
-["A) Sempre o interesse do cliente","B) Depende da situação","C) A verdade deve prevalecer"],
-["A) Sim, é dever profissional","B) Aceitaria com desconforto","C) Não aceitaria"],
-["A) Sempre","B) Até o ponto em que não cause danos","C) A justiça deve prevalecer"],
-["A) Ignoraria","B) Conversaria com o colega","C) Denunciaria"],
-["A) Não denunciaria","B) Denunciaria com provas","C) Sim, denunciaria"],
-["A) Não, quem é ético sai prejudicado","B) Sim, com coragem","C) Sim, a ética gera respeito"],
-["A) Sim, vencer é o foco","B) Às vezes","C) Nunca"],
-["A) Quando prejudica alguém","B) Quando há injustiça","C) Sempre"],
-["A) Norma jurídica","B) Depende","C) Valor moral"],
-["A) Aceitaria","B) Recusaria","C) Recusaria e denunciaria"],
-["A) Ajudaria","B) Recusaria","C) Denunciaria"],
-["A) Sim, totalmente","B) Parcialmente","C) Não"],
-["A) Totalmente leal","B) Até o limite da legalidade","C) Afastar-se da causa"],
-["A) Lucro","B) Equilíbrio","C) Ética"],
-["A) O que me beneficia","B) Evitar excessos","C) Manter princípios"]
+const perfis = [
+{ faixa: [0,5], titulo: "Pragmático Conveniente", texto: "Age pela conveniência. Justifica meios imorais pelos fins." },
+{ faixa: [6,10], titulo: "Neutro Conformista", texto: "Evita conflitos morais. Segue regras sem refletir sobre valores." },
+{ faixa: [11,15], titulo: "Ético Situacional", texto: "Adapta princípios ao contexto. Ética depende da pressão." },
+{ faixa: [16,20], titulo: "Responsável Consciente", texto: "Busca equilíbrio entre lei e moral. Age com ponderação." },
+{ faixa: [21,25], titulo: "Ético Convicto", texto: "Mantém princípios firmes mesmo sob risco pessoal." },
+{ faixa: [26,30], titulo: "Guardião da Justiça", texto: "Vive a ética como missão. Inflexível diante da corrupção." }
 ];
 
 const form = document.getElementById("quizForm");
+
 perguntas.forEach((p, i) => {
-  const div = document.createElement("div");
-  div.classList.add("question");
-  div.innerHTML = `<p><b>${i+1}. ${p}</b></p>`;
-  alternativas[i].forEach((alt, j) => {
-    div.innerHTML += `<label><input type="radio" name="q${i}" value="${j}"> ${alt}</label><br>`;
-  });
-  form.appendChild(div);
+    const div = document.createElement("div");
+    div.className = "question";
+    div.innerHTML = `<p><b>${p.pergunta}</b></p>`;
+    const optionsDiv = document.createElement("div");
+    optionsDiv.className = "options";
+    p.opcoes.forEach((opt, j) => {
+        const id = `q${i}_${j}`;
+        optionsDiv.innerHTML += `
+            <label><input type="radio" name="q${i}" value="${opt.valor}"> ${opt.texto}</label>`;
+    });
+    div.appendChild(optionsDiv);
+    form.appendChild(div);
 });
 
-function calcular() {
-  let score = 0;
-  for (let i=0;i<perguntas.length;i++){
-    const escolha = document.querySelector(`input[name='q${i}']:checked`);
-    if (!escolha) return alert("Responda todas as perguntas antes de enviar!");
-    score += parseInt(escolha.value);
-  }
-
-  const total = score;
-  let nivel = "";
-  let classe = "";
-  if (total <= 10){ nivel = "ÉTICA VULNERÁVEL – tende à conveniência pessoal."; classe = "baixo"; }
-  else if (total <= 20){ nivel = "ÉTICA CONDICIONAL – consciente, mas depende das circunstâncias."; classe = "medio"; }
-  else { nivel = "ÉTICA CONVICTA – age por princípios, mesmo sob risco."; classe = "alto"; }
-
-  document.getElementById("resultado").className = classe;
-  document.getElementById("resultado").innerHTML =
-    `<h2>Resultado: ${total} pontos</h2><p>${nivel}</p>`;
+function calcularPontuacao() {
+    const respostas = document.querySelectorAll("input[type='radio']:checked");
+    if (respostas.length < perguntas.length) {
+        alert("Por favor, responda todas as perguntas antes de enviar.");
+        return;
+    }
+    let total = 0;
+    respostas.forEach(r => total += parseInt(r.value));
+    let perfil = perfis.find(p => total >= p.faixa[0] && total <= p.faixa[1]);
+    document.getElementById("result").innerHTML = `
+        <p><strong>Seu Índice Ético:</strong> ${total} / 30</p>
+        <p class="profile-title">🧭 Perfil: ${perfil.titulo}</p>
+        <p>${perfil.texto}</p>
+    `;
 }
 </script>
-
 </body>
 </html>
