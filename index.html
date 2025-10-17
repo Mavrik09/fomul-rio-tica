@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 Ética no Limite</title>
+<title>🔥 Ética no Limite - Gamificado</title>
 <style>
 body { font-family:'Segoe UI', sans-serif; background:#f5f7fa; color:#1f2937; margin:0; padding:0; }
 header { background:#111827; color:#fff; text-align:center; padding:30px 20px; }
@@ -16,23 +16,23 @@ label:hover { background:#e5e7eb; }
 input[type="radio"] { margin-right:8px; }
 button { background:#3b82f6; color:#fff; padding:12px 25px; border:none; border-radius:8px; cursor:pointer; font-size:1em; transition:0.2s; }
 button:hover { background:#2563eb; }
-#resultado { margin-top:40px; background:#f9fafb; border-radius:10px; padding:20px; display:none; }
-.perfil { font-weight:bold; font-size:1.2em; margin-bottom:10px; }
-.descricao { line-height:1.5; }
+#resultado { margin-top:40px; border-radius:10px; padding:20px; display:none; text-align:center; }
+#barraProgresso { width:100%; height:25px; background:#e5e7eb; border-radius:12px; overflow:hidden; margin:15px 0; }
+#barraProgressoInner { height:100%; width:0; border-radius:12px; transition: width 1s; }
+.perfil { font-weight:bold; font-size:1.3em; margin-bottom:10px; }
+.descricao { line-height:1.5; margin-bottom:15px; }
 </style>
 </head>
 <body>
 
 <header>
 <h1>🔥 Ética no Limite: E se você não fosse tão bonzinho quanto pensa?</h1>
-<p>Escolha a alternativa que melhor representa sua ação. Pontuação: 2 = Mais Ética, 1 = Ética Ponderada, 0 = Menos Ética.</p>
+<p>Escolha a alternativa que mais se aproxima da sua ação real — não do que “parece bonito”</p>
 </header>
 
 <div class="container">
 <form id="quizForm">
-
-<!-- Perguntas completas exatas do seu questionário -->
-
+<!-- Perguntas completas (colar aqui as 15 perguntas exatas que você enviou) -->
 <div class="question">
 <h3>1. O Segredo que Salva o Cliente: Seu cliente confessa um fato grave (mas não ilegal) que, se usado, garante a vitória. Se você contar, ele perde. Sua lealdade é ao cliente ou à "verdade"?</h3>
 <label><input type="radio" name="q1" value="1">A) Uso o segredo para forçar um acordo, mas evito a mentira direta. (1 Ponto)</label>
@@ -137,11 +137,13 @@ button:hover { background:#2563eb; }
 <label><input type="radio" name="q15" value="0">B) Me aproveito. A falha é do outro lado. Meu trabalho é vencer. (0 Pontos)</label>
 <label><input type="radio" name="q15" value="1">C) Se o erro for pequeno, deixo passar. Se for um absurdo, corrijo. (1 Ponto)</label>
 </div>
-
-<button type="button" onclick="calcular()">Calcular Índice Ético</button>
+<!-- Para economia de espaço, não coloco aqui novamente, mas devem ser exatamente iguais às 15 anteriores -->
 </form>
 
+<button type="button" onclick="calcular()">Calcular Índice Ético</button>
+
 <div id="resultado">
+<div id="barraProgresso"><div id="barraProgressoInner"></div></div>
 <div class="perfil"></div>
 <div class="descricao"></div>
 </div>
@@ -157,28 +159,41 @@ function calcular() {
         total += parseInt(r.value);
     }
 
-    let perfil="", desc="";
-    if(total<=5){ 
-        perfil="Perfil 1: O Pragmatista Conveniente (0–5)";
-        desc="Você vê a ética como obstáculo, não como princípio. Tende a justificar meios antiéticos com resultados práticos.";
-    } else if(total<=10){
-        perfil="Perfil 2: O Neutro Conformista (6–10)";
-        desc="Evita conflitos morais e segue o fluxo. Cumpre regras sem refletir sobre o impacto ético real.";
-    } else if(total<=15){
-        perfil="Perfil 3: O Ético Situacional (11–15)";
-        desc="Reconhece a ética, mas a aplica conforme a conveniência. É vulnerável à pressão externa.";
-    } else if(total<=20){
-        perfil="Perfil 4: O Responsável Consciente (16–20)";
-        desc="Tenta equilibrar moral e dever, mesmo em dilemas difíceis. Busca agir com integridade consistente.";
-    } else if(total<=25){
-        perfil="Perfil 5: O Ético Convicto (21–25)";
-        desc="Mantém princípios sólidos, mesmo com prejuízos. Inspira respeito e confiança.";
-    } else {
-        perfil="Perfil 6: O Guardião da Justiça (26–30)";
-        desc="Enxerga a ética como base inegociável da profissão. Une técnica e moral com firmeza exemplar.";
-    }
+    let perfil="", desc="", cor="#ccc";
 
-    document.querySelector(".perfil").textContent = `Seu Índice Ético: ${total}/30 → ${perfil}`;
+if(total <= 5){ 
+    perfil = `O Cínico (O Mercenário) — 0 a 5 Pontos`;
+    desc = `Seu índice ético é preocupantemente baixo. Você vê a advocacia puramente como um negócio e uma batalha de interesses, não um serviço à justiça. Sua bússola é o lucro imediato e a vitória a qualquer custo. Você está sempre no limite da ilegalidade, priorizando a sobrevivência e o ganho pessoal acima de qualquer princípio moral ou regra profissional. Você acredita que "todo mundo faz" e que ser ético é ser ingênuo. Provocação: Você é o tipo de advogado que destrói a reputação da classe. Você pode ter sucesso financeiro rápido, mas terá um preço: sua integridade é negociável, e você será temido, mas jamais respeitado. Seus clientes são ativos descartáveis, e seu risco de acabar enfrentando a OAB ou a Justiça é altíssimo.`;
+    cor = "#dc2626"; // vermelho
+} else if(total <= 10){
+    perfil = `O Pragmatista (O Jogador de Risco) — 6 a 10 Pontos`;
+    desc = `Você reconhece o valor da ética, mas a trata como uma ferramenta a ser usada apenas quando é conveniente ou legalmente exigida. Sua principal preocupação é evitar a punição (OAB ou Justiça), não agir corretamente. Você adota a ética seletiva: assume riscos morais em situações onde o benefício é alto e a chance de ser pego é baixa. Você evita a fraude óbvia, mas abraça a omissão e a manipulação sutil da verdade. Provocação: Você está sempre justificando seus "atalhos". Você vive na zona cinzenta, buscando o "jeitinho" que te garante o resultado sem quebrar a lei abertamente. Seu problema não é a malícia, mas a falta de coragem para sacrificar um ganho. Você é um profissional competente, mas moralmente fraco, e a longo prazo, essa reputação limitada vai estagnar seu crescimento.`;
+    cor = "#f59e0b"; // laranja
+} else if(total <= 15){
+    perfil = `O Burocrata (O Seguidor de Regras) — 11 a 15 Pontos`;
+    desc = `Você é o defensor da legalidade estrita e do código de ética... desde que isso não exija sacrifícios pessoais. Você pontua bem nas questões que envolvem regras claras (fraude, suborno), mas hesita em dilemas morais complexos (denunciar um juiz, abandonar um cliente legalmente correto, mas moralmente repulsivo). Você adota uma ética reativa: evita o erro, mas não busca ativamente o acerto. Sua zona de conforto é o procedimento. Provocação: Você é um advogado seguro, mas previsível. Você nunca será a causa de um escândalo, mas também nunca fará a diferença em uma grande causa. Seu maior medo é o conflito e o risco de carreira. Sua ética é ditada pelo livro de regras, não pela sua consciência. Você faz o mínimo para ser considerado ético.`;
+    cor = "#facc15"; // amarelo
+} else if(total <= 20){
+    perfil = `O Ponderado (O Equilibrado Estratégico) — 16 a 20 Pontos`;
+    desc = `Você possui um forte senso de integridade e busca ativamente o equilíbrio entre a lealdade ao cliente e o dever para com a justiça e a sociedade. Sua abordagem é a ética deliberativa: você analisa as consequências e tenta escolher a opção que cause o menor dano moral e profissional. Você está disposto a renunciar a um lucro fácil se a situação cheirar a ilícito, e defende a ética como um valor de longo prazo. Provocação: Seu ponto fraco é o desconforto. Você tem a consciência limpa, mas gasta muita energia mental tentando justificar a escolha intermediária (1 ponto). Você precisa ter cuidado para que a busca pelo "equilíbrio" não se torne uma desculpa para não se posicionar de forma mais corajosa e combativa quando a causa for realmente justa.`;
+    cor = "#22c55e"; // verde claro
+} else if(total <= 25){
+    perfil = `O Idealista Inconformado (O Defensor de Princípios) — 21 a 25 Pontos`;
+    desc = `Sua pontuação revela uma alta rigidez moral e uma tendência a priorizar o ideal de justiça sobre o ganho pessoal e o conforto profissional. Você aceita o sacrifício ético: está disposto a enfrentar a OAB, o juiz ou o próprio cliente para defender o que é correto. Você vê o sigilo e a lealdade com seriedade, mas reconhece que a ética pessoal e o dever para com o Direito (a verdade) são superiores. Provocação: Você é o tipo de advogado que as pessoas respeitam, mas que muitos colegas chamam de "ingênuo". Você pode perder batalhas financeiras no curto prazo, e a rigidez pode te isolar. Seu desafio é aprender a navegar no mundo real sem quebrar seus princípios, mas também sem se tornar um mártir desnecessário. O idealismo tem um preço alto.`;
+    cor = "#16a34a"; // verde médio
+} else {
+    perfil = `O Padrão Ouro (O Ícone da Integridade) — 26 a 30 Pontos`;
+    desc = `Seu índice ético é máximo ou quase máximo. Você demonstra um compromisso inabalável com a integridade, a justiça e os mais altos padrões da profissão. Você pratica a ética proativa, ou seja, você não apenas evita o erro, mas busca ativamente o acerto, mesmo quando ninguém está olhando e mesmo quando há um custo alto. Sua reputação é seu maior patrimônio. Provocação: Você é a exceção à regra, e isso te torna um alvo. As pessoas vão testar seus limites e tentar explorar sua integridade. Seu desafio não é ser ético, mas sim ser ético e eficaz, provando que a integridade é o caminho para o sucesso duradouro. Mantenha-se firme, pois sua consistência é a maior crítica aos perfis de 0 a 10 pontos.`;
+    cor = "#059669"; // verde escuro
+}
+
+    // Atualiza barra de progresso
+    const barra = document.getElementById("barraProgressoInner");
+    barra.style.width = (total/30*100) + "%";
+    barra.style.backgroundColor = cor;
+
+    // Mostra perfil e descrição
+    document.querySelector(".perfil").textContent = `${perfil} → Índice Ético: ${total}/30`;
     document.querySelector(".descricao").textContent = desc;
     document.getElementById("resultado").style.display="block";
     document.getElementById("resultado").scrollIntoView({behavior:"smooth"});
